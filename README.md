@@ -23,7 +23,6 @@ p {
 </html>
 
   <h4><a href="http://lib.um.ac.id/">Kerjasama</a>
-<h3>Homepage</h3>
 <h2>Biodata</h2>
 <table>
     <tr>
