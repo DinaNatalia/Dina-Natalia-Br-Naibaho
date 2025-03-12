@@ -1,4 +1,4 @@
-# <center>Perpustakaan Annisa</center>
+# <center>Perpustakaan Dina Natalia</center>
 # Selamat Datang di Perpustakaan Dina Natalia Br Naibaho
 ![univermalang](https://github.com/user-attachments/assets/3f5700de-c080-49e0-8cd9-a9826514ceac)
 
