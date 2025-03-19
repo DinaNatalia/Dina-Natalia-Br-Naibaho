@@ -1,109 +1,149 @@
-body {          
-    background-color: #F7F7F7;  
-    color: #333;        
-    font-family: 'Poppins', sans-serif;  
-    margin: 0;  
-    padding: 0;  
-    text-align: center;  
-}    
-
-header {  
-    background-color: #5A7D9A;  
-    padding: 20px;  
-    color: white;  
-    font-size: 24px;  
-    font-weight: bold;  
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}    
-
-nav {  
-    display: flex;  
-    justify-content: center;  
-    background-color: transparent;  
-    padding: 15px;  
-    gap: 10px;
-}    
-
-nav .button {  
-    background-color: #3E5C76;  
-    color: white;  
-    padding: 12px 24px;  
-    text-decoration: none;  
-    border-radius: 25px;  
-    font-weight: bold;  
-    transition: 0.3s ease-in-out;
-}    
-
-nav .button:hover {  
-    background-color: #294257;  
-    transform: scale(1.05);
-}    
-
-main {  
-    background-color: white;  
-    padding: 30px;  
-    width: 75%;  
-    margin: auto;  
-    border-radius: 15px;  
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);  
-    text-align: center;  
-}    
-
-h2 {  
-    color: #3E5C76;  
-    font-size: 22px;
-    margin-bottom: 15px;
-}    
-
-.table-container {  
-    display: flex;  
-    justify-content: center;  
-}    
-
-table {  
-    border-collapse: collapse;  
-    width: 60%;  
-    margin: 20px auto;  
-    background: #E3E6E9;  
-    border-radius: 10px;  
-    overflow: hidden;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-}    
-
-th, td {  
-    padding: 12px;  
-    border-bottom: 1px solid #CCD1D6;  
-    text-align: left;  
-}    
-
-th {  
-    background-color: #5A7D9A;  
-    color: white;  
-    text-transform: uppercase;
-}    
-
-button {  
-    background-color: #3E5C76;  
-    color: white;  
-    padding: 12px 20px;  
-    margin-top: 15px;  
-    border: none;  
-    cursor: pointer;  
-    font-weight: bold;  
-    border-radius: 25px;  
-    transition: 0.3s ease-in-out;
-}    
-
-button:hover {  
-    background-color: #294257;  
-    transform: scale(1.05);
-}    
-
-footer {  
-    background-color: #5A7D9A;  
-    color: white;  
-    padding: 15px;  
-    margin-top: 30px;  
-    font-size: 14px;
-}  
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Interactive UI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #F7F7F7;
+            color: #333;
+            text-align: center;
+            scroll-behavior: smooth;
+        }
+        header {
+            background-color: #3E5C76;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            padding: 15px;
+            gap: 10px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            background-color: #3E5C76;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+        }
+        .button:hover {
+            background-color: #2B4A5F;
+            transform: scale(1.05);
+        }
+        main {
+            background-color: white;
+            padding: 30px;
+            width: 75%;
+            margin: 50px auto;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        main:hover {
+            transform: translateY(-5px);
+        }
+        h2 {
+            color: #3E5C76;
+            margin-bottom: 20px;
+        }
+        .table-container {
+            display: flex;
+            justify-content: center;
+        }
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            background: #E3E6E9;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #CCD1D6;
+            text-align: left;
+        }
+        th {
+            background-color: #3E5C76;
+            color: white;
+        }
+        tr:hover {
+            background-color: #D6D9DD;
+        }
+        button {
+            background-color: #3E5C76;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: all 0.3s ease-in-out;
+        }
+        button:hover {
+            background-color: #2B4A5F;
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: #3E5C76;
+            color: white;
+            padding: 15px;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>Modern Interactive UI</header>
+    <nav>
+        <a href="#" class="button">Home</a>
+        <a href="#" class="button">About</a>
+        <a href="#" class="button">Services</a>
+        <a href="#" class="button">Contact</a>
+    </nav>
+    <main>
+        <h2>Welcome to the Fresh UI</h2>
+        <p>Desain lebih dinamis, interaktif, dan ringan.</p>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+                <tr>
+                    <td>John Doe</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>Jane Doe</td>
+                    <td>28</td>
+                </tr>
+            </table>
+        </div>
+        <button>Click Me</button>
+    </main>
+    <footer>
+        &copy; 2025 Modern UI. All Rights Reserved.
+    </footer>
+</body>
+</html>
