@@ -1,53 +1,59 @@
 body {          
-    background-color: #FAF3E0;  
-    color: #3E2723;        
-    font-family: Arial, sans-serif;  
+    background-color: #F7F7F7;  
+    color: #333;        
+    font-family: 'Poppins', sans-serif;  
     margin: 0;  
     padding: 0;  
     text-align: center;  
 }    
 
 header {  
-    background-color: #B0A999;  
+    background-color: #5A7D9A;  
     padding: 20px;  
     color: white;  
     font-size: 24px;  
     font-weight: bold;  
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }    
 
 nav {  
     display: flex;  
     justify-content: center;  
-    background-color: #FAF3E0;  
-    padding: 10px;  
+    background-color: transparent;  
+    padding: 15px;  
+    gap: 10px;
 }    
 
 nav .button {  
-    background-color: #8D8A85;  
+    background-color: #3E5C76;  
     color: white;  
-    padding: 10px 20px;  
-    margin: 5px;  
+    padding: 12px 24px;  
     text-decoration: none;  
-    border-radius: 5px;  
+    border-radius: 25px;  
     font-weight: bold;  
+    transition: 0.3s ease-in-out;
 }    
 
 nav .button:hover {  
-    background-color: #A19D94;  
+    background-color: #294257;  
+    transform: scale(1.05);
 }    
 
 main {  
-    background-color: #B0A999;  
-    padding: 20px;  
-    width: 70%;  
+    background-color: white;  
+    padding: 30px;  
+    width: 75%;  
     margin: auto;  
-    border-radius: 10px;  
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);  
+    border-radius: 15px;  
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);  
     text-align: center;  
 }    
 
 h2 {  
-    color: #3E2723;  
+    color: #3E5C76;  
+    font-size: 22px;
+    margin-bottom: 15px;
 }    
 
 .table-container {  
@@ -57,42 +63,47 @@ h2 {
 
 table {  
     border-collapse: collapse;  
-    width: 50%;  
+    width: 60%;  
     margin: 20px auto;  
-    background: #D6D1C4;  
-    border: 1px solid #A19D94;  
+    background: #E3E6E9;  
     border-radius: 10px;  
+    overflow: hidden;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
 }    
 
 th, td {  
-    padding: 10px;  
-    border: 1px solid #A19D94;  
+    padding: 12px;  
+    border-bottom: 1px solid #CCD1D6;  
     text-align: left;  
 }    
 
 th {  
-    background-color: #8D8A85;  
+    background-color: #5A7D9A;  
     color: white;  
+    text-transform: uppercase;
 }    
 
 button {  
-    background-color: #6D6A64;  
+    background-color: #3E5C76;  
     color: white;  
-    padding: 10px;  
+    padding: 12px 20px;  
     margin-top: 15px;  
     border: none;  
     cursor: pointer;  
     font-weight: bold;  
-    border-radius: 5px;  
+    border-radius: 25px;  
+    transition: 0.3s ease-in-out;
 }    
 
 button:hover {  
-    background-color: #5A5752;  
+    background-color: #294257;  
+    transform: scale(1.05);
 }    
 
 footer {  
-    background-color: #8D8A85;  
+    background-color: #5A7D9A;  
     color: white;  
-    padding: 10px;  
-    margin-top: 20px;  
+    padding: 15px;  
+    margin-top: 30px;  
+    font-size: 14px;
 }  
