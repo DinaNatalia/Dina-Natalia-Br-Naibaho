@@ -68,7 +68,7 @@
 </head>
 <body>
     <header>
-        <h1>PERPUSTAKAAN DINA NATALIA BR NAIBAHO</h1>
+        <h1>PERPUSTAKAAN PERSONAL DINA NATALIA BR NAIBAHO</h1>
         <nav>
             <a href="about.html" class="button">About Me</a>
             <a href="contact-us.html" class="button">Hubungi Kami</a>
@@ -77,10 +77,10 @@
         </nav>
     </header>
     <main>
-        <h2>Selamat Datang di Perpustakaan Dina</h2>
+        <h2>Selamat Datang di Perpustakaan Personal Dina</h2>
         <img src="perpustkaan.jpeg" alt="Perpustakaan Dina">
         <p>
-            Hi, ini adalah Homepage Perpustakaan personal Dina Natalia Br Naibaho. Perpustakaan ini dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan yang nantinya Anda dapat menemukan berbagai konten yang saya bagikan!
+            Halo, ini adalah Homepage Perpustakaan personal Dina Natalia Br Naibaho. Perpustakaan ini dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan yang nantinya Anda dapat menemukan berbagai konten yang saya bagikan disini!
         </p>
         <h3>Kerja Sama dan Referensi</h3>
         <a href="https://lib.itb.ac.id/kki/" target="_blank">Perpustakaan Institut Teknologi Bandung</a>
@@ -97,7 +97,7 @@
             <p>Perpustakaan ITB menyelenggarakan event seni yaitu Ganesha award pameran karya IT pada Minggu, 24  November 2024. Perpustakaan tersebut dilakukan untuk pengabdian masyarakat dan sebagai hiburan”.</p>
             <a href="#" style="background-color: #3366ff; color: #f0f8ff; padding: 6px 14px; border-radius: 4px; text-decoration: none;class="btn btn-primary" style="margin-top: 15px;">Info Selengkapnya</a>
         📱 <strong>Hubungi via WhatsApp:</strong> 
-        <a href="https://wa.me/628122605573" target="_blank" style="color: green; text-decoration: none;">+62 812-3456-7890</a>
+        <a href="https://wa.me/622176447129" target="_blank" style="color: green; text-decoration: none;">+62 812-3456-7890</a>
       </p>
                 </div>
             </div>
@@ -106,3 +106,65 @@
     </footer>
 </body>
 </html>
+<script>
+  // Buat cookie dengan nama dan durasi tertentu
+  function simpanCookie(namaKey, isiValue, durasiHari) {
+    const tanggalKadaluarsa = new Date();
+    tanggalKadaluarsa.setDate(tanggalKadaluarsa.getDate() + durasiHari);
+    document.cookie = `${namaKey}=${isiValue}; expires=${tanggalKadaluarsa.toUTCString()}; path=/`;
+  }
+
+  // Ambil nilai cookie berdasarkan nama
+  function ambilCookie(namaKey) {
+    const semuaCookie = document.cookie.split(';');
+    for (let elemen of semuaCookie) {
+      let [kunci, nilai] = elemen.trim().split('=');
+      if (kunci === namaKey) return nilai;
+    }
+    return null;
+  }
+
+  // Proses pengecekan identitas pengunjung
+  function prosesVerifikasi() {
+    const inputNama = document.getElementById('namaPengunjung').value.trim();
+    const jawabanUser = parseInt(document.getElementById('jawaban').value);
+    const hasilBenar = angka1 * angka2;
+
+    if (!inputNama) {
+      tampilkanPesan('Silakan isi nama Anda terlebih dahulu.');
+      return;
+    }
+    if (isNaN(jawabanUser)) {
+      tampilkanPesan('Jawaban harus berupa angka.');
+      return;
+    }
+
+    if (jawabanUser === hasilBenar) {
+      simpanCookie('pengunjungPerpus', inputNama, 3);
+      tampilkanHalamanUtama(inputNama);
+    } else {
+      tampilkanPesan('Jawaban salah, silakan coba lagi.');
+    }
+  }
+
+  // Tampilkan pesan error
+  function tampilkanPesan(teks) {
+    document.getElementById('error').innerText = teks;
+  }
+
+  // Tampilkan konten utama jika verifikasi berhasil
+  function tampilkanHalamanUtama(nama) {
+    document.getElementById('verifikasi').style.display = 'none';
+    document.getElementById('kontenUtama').style.display = 'block';
+    document.getElementById('pesan').innerText = `Halo ${nama}, selamat datang di perpustakaan pribadi!`;
+    tampilkanPesan('');
+  }
+
+  // Cek otomatis jika sudah pernah diverifikasi sebelumnya
+  window.addEventListener('DOMContentLoaded', () => {
+    const namaTersimpan = ambilCookie('pengunjungPerpus');
+    if (namaTersimpan) {
+      tampilkanHalamanUtama(namaTersimpan);
+    }
+  });
+</script>
