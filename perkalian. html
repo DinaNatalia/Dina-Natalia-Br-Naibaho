@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Tabel Perkalian</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #7FFFD4;
       text-align: center;
+      margin: 0;
+      padding: 20px;
     }
     table {
       margin: auto;
       border-collapse: collapse;
-      background-color: #ffffff;
+      background-color: #fff;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
     th, td {
@@ -23,24 +24,23 @@
     }
     th {
       background-color: #f2b03e;
-      color: Hitam;
+      color: black;
     }
     caption {
       font-size: 24px;
       margin: 15px;
       font-weight: bold;
     }
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #7FFFD4;
+    footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #333;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Tabel Perkalian 1–10</h1>
-    </nav>
   </header>
 
   <main>
@@ -51,11 +51,6 @@
         <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
         <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
       </tr>
-      <!-- Baris 1–10 -->
-      <!-- Baris dibuat otomatis di bawah -->
-      <!-- Bisa diperluas sampai 12 jika ingin -->
-      <!-- Berikut hasil 10x10 -->
-      <!-- Gunakan loop jika pakai JS -->
       <tr><th>1</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
       <tr><th>2</th><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td><td>12</td><td>14</td><td>16</td><td>18</td><td>20</td></tr>
       <tr><th>3</th><td>3</td><td>6</td><td>9</td><td>12</td><td>15</td><td>18</td><td>21</td><td>24</td><td>27</td><td>30</td></tr>
