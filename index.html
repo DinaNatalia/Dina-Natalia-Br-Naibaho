@@ -1,170 +1,189 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan Dina</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        body {
-            text-align: center;
-            background-color: #F7F7F7;
-            color: #333;
-        }
-        header {
-            background-color: #3E5C76;
-            color: white;
-            padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        nav {
-            margin-top: 10px;
-        }
-        .button {
-            background-color: #3E5C76;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin: 5px;
-        }
-        .button:hover {
-            background-color: #2B4A5F;
-        }
-        main {
-            background-color: white;
-            padding: 30px;
-            margin: 30px auto;
-            width: 80%;
-            max-width: 800px;
-            border-radius: 15px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        img {
-            width: 100%;
-            height: auto;
-            max-width: 600px;
-            border-radius: 10px;
-            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-        footer {
-            background-color: #3E5C76;
-            color: white;
-            padding: 15px;
-            margin-top: 30px;
-            font-size: 14px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perpustakaan Dina</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      text-align: center;
+      background-color: #F7F7F7;
+      color: #333;
+    }
+    header {
+      background-color: #3E5C76;
+      color: white;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    .button {
+      background-color: #3E5C76;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin: 5px;
+    }
+    .button:hover {
+      background-color: #2B4A5F;
+    }
+    main {
+      background-color: white;
+      padding: 30px;
+      margin: 30px auto;
+      width: 80%;
+      max-width: 800px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    img {
+      width: 100%;
+      height: auto;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+    footer {
+      background-color: #3E5C76;
+      color: white;
+      padding: 15px;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>PERPUSTAKAAN PERSONAL DINA NATALIA BR NAIBAHO</h1>
-        <nav>
-            <a href="about.html" class="button">About Me</a>
-            <a href="contact-us.html" class="button">Hubungi Kami</a>
-            <a href="perkalian. html" class="button">Tabel Perkalian</a>
-            <a href="formulir.html" class="button">Formulir Kunjungan</a> 
-        </nav>
-    </header>
-    <main>
-        <h2>Selamat Datang di Perpustakaan Personal Dina</h2>
-        <img src="perpustkaan.jpeg" alt="Perpustakaan Dina">
-        <p>
-            Halo, ini adalah Homepage Perpustakaan personal Dina Natalia Br Naibaho. Perpustakaan ini dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan yang nantinya Anda dapat menemukan berbagai konten yang saya bagikan disini!
-        </p>
-        <h3>Kerja Sama dan Referensi</h3>
-        <a href="https://lib.itb.ac.id/kki/" target="_blank">Perpustakaan Institut Teknologi Bandung</a>
-    </main>
-    <footer>
-        <h2>Event Kegiatan</h2>
-<div style="background-color: #77BFC7; padding: 40px; border-radius: 25px; margin: 40px;">
-    <div style="display: flex; align-items: center;">
+  <header>
+    <h1>PERPUSTAKAAN PERSONAL DINA NATALIA BR NAIBAHO</h1>
+    <nav>
+      <a href="about.html" class="button">About Me</a>
+      <a href="contact-us.html" class="button">Hubungi Kami</a>
+      <a href="perkalian.html" class="button">Tabel Perkalian</a>
+      <a href="formulir.html" class="button">Formulir Kunjungan</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- FORM VERIFIKASI -->
+    <div id="verifikasi">
+      <h3>Silakan Verifikasi Identitas Anda</h3>
+      <input type="text" id="namaPengunjung" placeholder="Masukkan Nama Anda" /><br><br>
+      <span id="soal"></span><br>
+      <input type="number" id="jawaban" placeholder="Jawaban Anda" /><br><br>
+      <button onclick="prosesVerifikasi()">Verifikasi</button>
+      <div id="error" style="color: red; margin-top: 10px;"></div>
+    </div>
+
+    <!-- KONTEN UTAMA -->
+    <div id="kontenUtama" style="display: none;">
+      <h2>Selamat Datang di Perpustakaan Personal Dina</h2>
+      <img src="perpustkaan.jpeg" alt="Perpustakaan Dina" />
+      <p id="pesan"></p>
+      <p>
+        Halo, ini adalah Homepage Perpustakaan personal Dina Natalia Br Naibaho. Perpustakaan ini dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan yang nantinya Anda dapat menemukan berbagai konten yang saya bagikan disini!
+      </p>
+      <h3>Kerja Sama dan Referensi</h3>
+      <a href="https://lib.itb.ac.id/kki/" target="_blank">Perpustakaan Institut Teknologi Bandung</a>
+    </div>
+  </main>
+
+  <footer>
+    <h2>Event Kegiatan</h2>
+    <div style="background-color: #77BFC7; padding: 40px; border-radius: 25px; margin: 40px;">
+      <div style="display: flex; align-items: center;">
         <img src="Event Kegiatan Library ITB.jpg" alt="Ganesha award pameran karya ITB 2024" style="width: 180px; height: auto; border-radius: 8px; margin-right: 20px;">
         <div>
-            <h2 style="color: #3366ff; margin-bottom: 5px;">Ganesha award pameran karya ITB 2024</h2>
-            <p><strong style="color: black;">Tanggal:</strong> 24 November 2024</p>
-            <p><em>Lokasi: Aula Barat dan Aula Timur</em></p>
-            <p>Perpustakaan ITB menyelenggarakan event seni yaitu Ganesha award pameran karya IT pada Minggu, 24  November 2024. Perpustakaan tersebut dilakukan untuk pengabdian masyarakat dan sebagai hiburan”.</p>
-            <a href="#" style="background-color: #3366ff; color: #f0f8ff; padding: 6px 14px; border-radius: 4px; text-decoration: none;class="btn btn-primary" style="margin-top: 15px;">Info Selengkapnya</a>
-        📱 <strong>Hubungi via WhatsApp:</strong> 
-        <a href="https://wa.me/622176447129" target="_blank" style="color: green; text-decoration: none;">+62 812-3456-7890</a>
-      </p>
-                </div>
-            </div>
+          <h2 style="color: #3366ff; margin-bottom: 5px;">Ganesha award pameran karya ITB 2024</h2>
+          <p><strong style="color: black;">Tanggal:</strong> 24 November 2024</p>
+          <p><em>Lokasi: Aula Barat dan Aula Timur</em></p>
+          <p>Perpustakaan ITB menyelenggarakan event seni yaitu Ganesha award pameran karya IT pada Minggu, 24  November 2024. Perpustakaan tersebut dilakukan untuk pengabdian masyarakat dan sebagai hiburan.</p>
+          <a href="#" style="background-color: #3366ff; color: #f0f8ff; padding: 6px 14px; border-radius: 4px; text-decoration: none;">Info Selengkapnya</a>
+          📱 <strong>Hubungi via WhatsApp:</strong> 
+          <a href="https://wa.me/622176447129" target="_blank" style="color: green; text-decoration: none;">+62 812-3456-7890</a>
         </div>
-        <p>© 2025 Dina Natalia Br Naibaho</p>
-    </footer>
+      </div>
+    </div>
+    <p>© 2025 Dina Natalia Br Naibaho</p>
+  </footer>
+
+  <script>
+    // Buat cookie
+    function simpanCookie(namaKey, isiValue, durasiHari) {
+      const tanggalKadaluarsa = new Date();
+      tanggalKadaluarsa.setDate(tanggalKadaluarsa.getDate() + durasiHari);
+      document.cookie = `${namaKey}=${isiValue}; expires=${tanggalKadaluarsa.toUTCString()}; path=/`;
+    }
+
+    // Ambil cookie
+    function ambilCookie(namaKey) {
+      const semuaCookie = document.cookie.split(';');
+      for (let elemen of semuaCookie) {
+        let [kunci, nilai] = elemen.trim().split('=');
+        if (kunci === namaKey) return nilai;
+      }
+      return null;
+    }
+
+    // Inisialisasi soal
+    let angka1 = Math.floor(Math.random() * 10) + 1;
+    let angka2 = Math.floor(Math.random() * 10) + 1;
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('soal').innerText = `Berapa hasil dari ${angka1} × ${angka2}?`;
+
+      // Cek apakah sudah ada cookie
+      const namaTersimpan = ambilCookie('pengunjungPerpus');
+      if (namaTersimpan) {
+        tampilkanHalamanUtama(namaTersimpan);
+      }
+    });
+
+    // Verifikasi
+    function prosesVerifikasi() {
+      const inputNama = document.getElementById('namaPengunjung').value.trim();
+      const jawabanUser = parseInt(document.getElementById('jawaban').value);
+      const hasilBenar = angka1 * angka2;
+
+      if (!inputNama) {
+        tampilkanPesan('Silakan isi nama Anda terlebih dahulu.');
+        return;
+      }
+      if (isNaN(jawabanUser)) {
+        tampilkanPesan('Jawaban harus berupa angka.');
+        return;
+      }
+
+      if (jawabanUser === hasilBenar) {
+        simpanCookie('pengunjungPerpus', inputNama, 3);
+        tampilkanHalamanUtama(inputNama);
+      } else {
+        tampilkanPesan('Jawaban salah, silakan coba lagi.');
+      }
+    }
+
+    function tampilkanPesan(teks) {
+      document.getElementById('error').innerText = teks;
+    }
+
+    function tampilkanHalamanUtama(nama) {
+      document.getElementById('verifikasi').style.display = 'none';
+      document.getElementById('kontenUtama').style.display = 'block';
+      document.getElementById('pesan').innerText = `Halo ${nama}, selamat datang di perpustakaan pribadi!`;
+      tampilkanPesan('');
+    }
+  </script>
 </body>
 </html>
-<script>
-  // Buat cookie dengan nama dan durasi tertentu
-  function simpanCookie(namaKey, isiValue, durasiHari) {
-    const tanggalKadaluarsa = new Date();
-    tanggalKadaluarsa.setDate(tanggalKadaluarsa.getDate() + durasiHari);
-    document.cookie = `${namaKey}=${isiValue}; expires=${tanggalKadaluarsa.toUTCString()}; path=/`;
-  }
-
-  // Ambil nilai cookie berdasarkan nama
-  function ambilCookie(namaKey) {
-    const semuaCookie = document.cookie.split(';');
-    for (let elemen of semuaCookie) {
-      let [kunci, nilai] = elemen.trim().split('=');
-      if (kunci === namaKey) return nilai;
-    }
-    return null;
-  }
-
-  // Proses pengecekan identitas pengunjung
-  function prosesVerifikasi() {
-    const inputNama = document.getElementById('namaPengunjung').value.trim();
-    const jawabanUser = parseInt(document.getElementById('jawaban').value);
-    const hasilBenar = angka1 * angka2;
-
-    if (!inputNama) {
-      tampilkanPesan('Silakan isi nama Anda terlebih dahulu.');
-      return;
-    }
-    if (isNaN(jawabanUser)) {
-      tampilkanPesan('Jawaban harus berupa angka.');
-      return;
-    }
-
-    if (jawabanUser === hasilBenar) {
-      simpanCookie('pengunjungPerpus', inputNama, 3);
-      tampilkanHalamanUtama(inputNama);
-    } else {
-      tampilkanPesan('Jawaban salah, silakan coba lagi.');
-    }
-  }
-
-  // Tampilkan pesan error
-  function tampilkanPesan(teks) {
-    document.getElementById('error').innerText = teks;
-  }
-
-  // Tampilkan konten utama jika verifikasi berhasil
-  function tampilkanHalamanUtama(nama) {
-    document.getElementById('verifikasi').style.display = 'none';
-    document.getElementById('kontenUtama').style.display = 'block';
-    document.getElementById('pesan').innerText = `Halo ${nama}, selamat datang di perpustakaan pribadi!`;
-    tampilkanPesan('');
-  }
-
-  // Cek otomatis jika sudah pernah diverifikasi sebelumnya
-  window.addEventListener('DOMContentLoaded', () => {
-    const namaTersimpan = ambilCookie('pengunjungPerpus');
-    if (namaTersimpan) {
-      tampilkanHalamanUtama(namaTersimpan);
-    }
-  });
-</script>
