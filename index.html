@@ -64,6 +64,24 @@
       margin-top: 30px;
       font-size: 14px;
     }
+    #cookieBanner {
+      background-color: #222;
+      color: white;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: none;
+      z-index: 1000;
+    }
+    #cookieBanner button {
+      margin-left: 10px;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #3E5C76;
+      color: white;
+    }
   </style>
 </head>
 <body>
@@ -94,7 +112,7 @@
       <img src="perpustkaan.jpeg" alt="Perpustakaan Dina" />
       <p id="pesan"></p>
       <p>
-        Halo, ini adalah Homepage Perpustakaan personal Dina Natalia Br Naibaho. Perpustakaan ini dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan yang nantinya Anda dapat menemukan berbagai konten yang saya bagikan di sini!
+        Halo, ini adalah Homepage Perpustakaan personal Dina Natalia Br Naibaho Perpustakaan ini dibuat untuk memenuhi keperluan mata kuliah Pengembangan Web Perpustakaan yang nantinya Anda dapat menemukan berbagai konten yang saya bagikan disini!
       </p>
       <h3>Kerja Sama dan Referensi</h3>
       <a href="https://lib.itb.ac.id/kki/" target="_blank">Perpustakaan Institut Teknologi Bandung</a>
@@ -103,33 +121,38 @@
     <!-- REKOMENDASI BUKU -->
     <h3 style="margin-top: 40px;">Rekomendasi Buku</h3>
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
+      <!-- Buku 1 -->
       <div style="width: 180px; text-align: center;">
         <a href="https://openlibrary.org/books/OL22819815M/Abnormal_psychology" target="_blank">
-          <img src="https://covers.openlibrary.org/b/olid/OL22819815M-M.jpg" alt="Abnormal Psychology">
+          <img src="https://covers.openlibrary.org/b/olid/OL22819815M-M.jpg" alt="Abnormal Psychology" style="width: 100%; height: auto; border-radius: 8px;">
           <p><strong>Abnormal Psychology</strong></p>
         </a>
       </div>
+      <!-- Buku 2 -->
       <div style="width: 180px; text-align: center;">
         <a href="https://openlibrary.org/books/OL37014905M/Understanding_crime_in_Canada" target="_blank">
-          <img src="https://covers.openlibrary.org/b/olid/OL37014905M-M.jpg" alt="Understanding Crime in Canada">
+          <img src="https://covers.openlibrary.org/b/olid/OL37014905M-M.jpg" alt="Understanding Crime in Canada" style="width: 100%; height: auto; border-radius: 8px;">
           <p><strong>Understanding Crime in Canada</strong></p>
         </a>
       </div>
+      <!-- Buku 3 -->
       <div style="width: 180px; text-align: center;">
         <a href="https://openlibrary.org/books/OL28046946M/Reason_Faith_and_Tradition" target="_blank">
-          <img src="https://covers.openlibrary.org/b/olid/OL28046946M-M.jpg" alt="Reason, Faith, and Tradition">
+          <img src="https://covers.openlibrary.org/b/olid/OL28046946M-M.jpg" alt="Reason, Faith, and Tradition" style="width: 100%; height: auto; border-radius: 8px;">
           <p><strong>Reason, Faith, and Tradition</strong></p>
         </a>
       </div>
+      <!-- Buku 4 -->
       <div style="width: 180px; text-align: center;">
         <a href="https://openlibrary.org/books/OL32856480M/A_Court_of_Mist_and_Fury" target="_blank">
-          <img src="https://covers.openlibrary.org/b/olid/OL32856480M-M.jpg" alt="A Court of Mist and Fury">
+          <img src="https://covers.openlibrary.org/b/olid/OL32856480M-M.jpg" alt="A Court of Mist and Fury" style="width: 100%; height: auto; border-radius: 8px;">
           <p><strong>A Court of Mist and Fury</strong></p>
         </a>
       </div>
+      <!-- Buku 5 -->
       <div style="width: 180px; text-align: center;">
         <a href="https://openlibrary.org/books/OL1880640M/Bad_language" target="_blank">
-          <img src="https://covers.openlibrary.org/b/olid/OL1880640M-M.jpg" alt="Bad Language">
+          <img src="https://covers.openlibrary.org/b/olid/OL1880640M-M.jpg" alt="Bad Language" style="width: 100%; height: auto; border-radius: 8px;">
           <p><strong>Bad Language</strong></p>
         </a>
       </div>
@@ -157,21 +180,12 @@
     <p>© 2025 Dina Natalia Br Naibaho</p>
   </footer>
 
+  <div id="cookieBanner">
+    Situs ini menggunakan cookie untuk menjamin pengalaman anda
+    <button onclick="setujuiCookie()">Saya Setuju</button>
+  </div>
+
   <script>
-    function simpanCookie(namaKey, isiValue) {
-      // Cookie hanya berlaku selama sesi browser
-      document.cookie = `${namaKey}=${isiValue}; path=/`;
-    }
-
-    function ambilCookie(namaKey) {
-      const semuaCookie = document.cookie.split(';');
-      for (let elemen of semuaCookie) {
-        let [kunci, nilai] = elemen.trim().split('=');
-        if (kunci === namaKey) return nilai;
-      }
-      return null;
-    }
-
     let angka1 = Math.floor(Math.random() * 10) + 1;
     let angka2 = Math.floor(Math.random() * 10) + 1;
 
@@ -180,24 +194,24 @@
     });
 
     function prosesVerifikasi() {
-      const inputNama = document.getElementById('namaPengunjung').value.trim();
-      const jawabanUser = parseInt(document.getElementById('jawaban').value);
-      const hasilBenar = angka1 * angka2;
+      const nama = document.getElementById('namaPengunjung').value.trim();
+      const jawaban = parseInt(document.getElementById('jawaban').value);
+      const benar = angka1 * angka2;
 
-      if (!inputNama) {
-        tampilkanPesan('Silakan isi nama Anda terlebih dahulu.');
-        return;
-      }
-      if (isNaN(jawabanUser)) {
-        tampilkanPesan('Jawaban harus berupa angka.');
-        return;
-      }
+      if (!nama) return tampilkanPesan("Isi nama Anda!");
+      if (isNaN(jawaban)) return tampilkanPesan("Jawaban harus angka!");
 
-      if (jawabanUser === hasilBenar) {
-        simpanCookie('pengunjungPerpus', inputNama);
-        tampilkanHalamanUtama(inputNama);
+      if (jawaban === benar) {
+        document.getElementById('verifikasi').style.display = 'none';
+        document.getElementById('kontenUtama').style.display = 'block';
+        document.getElementById('pesan').innerText = `Halo ${nama}, selamat datang di perpustakaan pribadi!`;
+
+        // Tampilkan cookie banner setelah verifikasi berhasil
+        if (!ambilCookie('setujuCookie')) {
+          document.getElementById('cookieBanner').style.display = 'block';
+        }
       } else {
-        tampilkanPesan('Jawaban salah, silakan coba lagi.');
+        tampilkanPesan("Jawaban salah, coba lagi.");
       }
     }
 
@@ -205,11 +219,22 @@
       document.getElementById('error').innerText = teks;
     }
 
-    function tampilkanHalamanUtama(nama) {
-      document.getElementById('verifikasi').style.display = 'none';
-      document.getElementById('kontenUtama').style.display = 'block';
-      document.getElementById('pesan').innerText = `Halo ${nama}, selamat datang di perpustakaan pribadi!`;
-      tampilkanPesan('');
+    function simpanCookie(namaKey, nilai, hari) {
+      const d = new Date();
+      d.setTime(d.getTime() + (hari*24*60*60*1000));
+      document.cookie = `${namaKey}=${nilai}; expires=${d.toUTCString()}; path=/`;
+    }
+
+    function ambilCookie(namaKey) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${namaKey}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+      return null;
+    }
+
+    function setujuiCookie() {
+      simpanCookie('setujuCookie', 'ya', 1);
+      document.getElementById('cookieBanner').style.display = 'none';
     }
   </script>
 </body>
